@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
 import 'package:mpit_hack/features/auth/widgets/code_text_field.dart';
-import 'package:mpit_hack/features/widgets/my_text_field.dart';
 
-class OtpScreen extends StatefulWidget {
-  const OtpScreen({super.key});
+class OtpGosuslugiScreen extends StatefulWidget {
+  const OtpGosuslugiScreen({super.key});
 
   @override
-  State<OtpScreen> createState() => _OtpScreenState();
+  State<OtpGosuslugiScreen> createState() => _OtpGosuslsugiScreenState();
 }
 
-class _OtpScreenState extends State<OtpScreen> {
+class _OtpGosuslsugiScreenState extends State<OtpGosuslugiScreen> {
 
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -63,9 +62,9 @@ class _OtpScreenState extends State<OtpScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "Подтвердите номер\nтелефна",
+                    "Добро пожаловать",
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 35,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -75,9 +74,9 @@ class _OtpScreenState extends State<OtpScreen> {
               Row(
                 children: [
                   Text(
-                    "Введите код, который пришёл вам\nна номер телефона",
+                    "Давайте авторизируемся",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 25,
                     ),
                   ),
                 ],
@@ -96,43 +95,21 @@ class _OtpScreenState extends State<OtpScreen> {
                   child: Column(
                     spacing: 10,
                     children: [
-                      Row(
-                        spacing: 10,
-                        children: [
-                          CodeTextField(
-                            controller: TextEditingController(),
-                          ),
-                          CodeTextField(
-                            controller: TextEditingController(),
-                          ),
-                          CodeTextField(
-                            controller: TextEditingController(),
-                          ),
-                          CodeTextField(
-                            controller: TextEditingController(),
-                          ),
-                          CodeTextField(
-                            controller: TextEditingController(),
-                          ),
-                          CodeTextField(
-                            controller: TextEditingController(),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 50,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: navToOtpGosuslugi,
-                          child: Text("Продолжить"),
+                      Container(
+                        padding: EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(40),
                         ),
+                        child: Image.asset("assets/auth/gosuslugi.png"),
                       ),
+                      SizedBox(height: 20),
                       SizedBox(
                         height: 50,
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: navToRegister,
-                          child: Text("Регистрация"),
+                          onPressed: navToHomeScreen,
+                          child: Text("Авторизироваться"),
                         ),
                       ),
                     ],
@@ -147,12 +124,8 @@ class _OtpScreenState extends State<OtpScreen> {
     );
   }
 
-  void navToOtpGosuslugi() {
-    Navigator.pushNamed(context, "/otp_gosuslugi");
-  }
-
-  void navToRegister() {
-    Navigator.pushNamed(context, "/register");
+  void navToHomeScreen() {
+    Navigator.pushNamed(context, "/home");
   }
 }
 
