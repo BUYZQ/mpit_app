@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
+import 'package:mpit_hack/features/auth/screens/login_screen.dart';
+import 'package:mpit_hack/features/auth/screens/otp_screen.dart';
 import 'package:mpit_hack/features/auth/screens/register_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -14,6 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: whiteColor,
       ),
+      routes: {
+        "/register": (context) => RegisterScreen(),
+        "/login": (context) => LoginScreen(),
+        "/otp": (context) => OtpScreen(),
+      },
       home: StreamBuilder<AuthState>(
         stream: supabase.auth.onAuthStateChange,
         builder: (context, snapshot) {

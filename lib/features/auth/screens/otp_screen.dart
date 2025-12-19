@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
+import 'package:mpit_hack/features/auth/widgets/code_text_field.dart';
 import 'package:mpit_hack/features/widgets/my_text_field.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class OtpScreen extends StatefulWidget {
+  const OtpScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<OtpScreen> createState() => _OtpScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _OtpScreenState extends State<OtpScreen> {
 
-  final TextEditingController surnameController = TextEditingController();
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController patronymicController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Row(
                 children: [
                   Text(
-                    "Давайте зарегестрируемся",
+                    "Давайте авторизируемся",
                     style: TextStyle(
                       fontSize: 25,
                     ),
@@ -99,44 +96,43 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: Column(
                     spacing: 10,
                     children: [
-                      MyTextField(
-                        hint: "Фамилия",
-                        controller: surnameController,
-                      ),
-                      MyTextField(
-                        hint: "Имя",
-                        controller: nameController,
-                      ),
-                      MyTextField(
-                        hint: "Отчество",
-                        controller: patronymicController,
-                      ),
-                      MyTextField(
-                        hint: "Номер телефона",
-                        controller: phoneController,
-                      ),
-                      MyTextField(
-                        hint: "Пароль",
-                        controller: passwordController,
-                      ),
-                      MyTextField(
-                        hint: "Подтвердите пароль",
-                        controller: confirmPasswordController,
+                      Row(
+                        spacing: 10,
+                        children: [
+                          CodeTextField(
+                            controller: TextEditingController(),
+                          ),
+                          CodeTextField(
+                            controller: TextEditingController(),
+                          ),
+                          CodeTextField(
+                            controller: TextEditingController(),
+                          ),
+                          CodeTextField(
+                            controller: TextEditingController(),
+                          ),
+                          CodeTextField(
+                            controller: TextEditingController(),
+                          ),
+                          CodeTextField(
+                            controller: TextEditingController(),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 50,
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: navToOtp,
-                          child: Text("Зарегистрироваться"),
+                          onPressed: () {},
+                          child: Text("Авторизироваться"),
                         ),
                       ),
                       SizedBox(
                         height: 50,
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: navToLogin,
-                          child: Text("Авторизация"),
+                          onPressed: navToRegister,
+                          child: Text("Регистрация"),
                         ),
                       ),
                       SizedBox(
@@ -159,13 +155,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-
-  void navToLogin() {
-    Navigator.pushNamed(context, "/login");
-  }
-
-  navToOtp() {
-    Navigator.pushNamed(context, "/otp");
+  void navToRegister() {
+    Navigator.pushNamed(context, "/register");
   }
 }
 
