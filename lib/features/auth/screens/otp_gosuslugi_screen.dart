@@ -125,7 +125,7 @@ class _OtpGosuslsugiScreenState extends State<OtpGosuslugiScreen> {
   }
 
   void navToHomeScreen() {
-    Navigator.pushNamed(context, "/home");
+    Navigator.pushNamed(context, "/root");
   }
 }
 
