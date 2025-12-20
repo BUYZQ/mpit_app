@@ -23,7 +23,7 @@ class ReceiptsScreen extends StatelessWidget {
                   padding: EdgeInsets.all(20),
                   children: [
                     // First Date Group
-                    _buildDateGroup("12.03.2025", 5),
+                    _buildDateGroup("12.03.2025", 4),
                     SizedBox(height: 30),
                     // Second Date Group
                     _buildDateGroup("12.03.2025", 4),
@@ -38,6 +38,12 @@ class ReceiptsScreen extends StatelessWidget {
   }
 
   Widget _buildDateGroup(String date, int itemCount) {
+    List<String> words = [
+      "Кварплата",
+      "Электроэнергия",
+      "Вода",
+      "Интернет",
+    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -59,9 +65,25 @@ class ReceiptsScreen extends StatelessWidget {
             child: Container(
               width: double.infinity,
               height: 80,
-              decoration: BoxDecoration(
-                color: greyColor,
-                borderRadius: BorderRadius.circular(15),
+              decoration: appBoxDecoration,
+              child: Row(
+                children: [
+                  SizedBox(width: 20),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    height: 60,
+                    width: 60,
+                    decoration: appBoxDecoration,
+                    child: Image.asset("assets/news/blank.png"),
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    words[index],
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

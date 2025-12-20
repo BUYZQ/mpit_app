@@ -31,24 +31,19 @@ class _NewsScreenState extends State<NewsScreen> {
                     decoration: appBoxDecoration,
                     margin: EdgeInsets.all(8),
                     child: Column(
+                      spacing: 10,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Image.asset("assets/news/onboarding.png"),
                         Text(
-                          "Кварплата",
+                          "Отключение воды с 11.08.2025 по 20.08.2025",
                           style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         Text(
-                          "19.12.2025",
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        Text(
-                          "2050 рублей",
+                          "Будет производиться отключение горячей воды в сявзи с ремонтными работам... ",
                           style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.w400,
@@ -59,8 +54,8 @@ class _NewsScreenState extends State<NewsScreen> {
                           height: 50,
                           width: double.infinity,
                           child: MyButton(
-                            onPressed: navToPaymentScreen,
-                            title: "Оплатить",
+                            onPressed: () {},
+                            title: "Развернуть полностью",
                           ),
                         ),
                       ],
@@ -73,10 +68,6 @@ class _NewsScreenState extends State<NewsScreen> {
         ],
       ),
     );
-  }
-
-  void navToPaymentScreen() {
-    Navigator.pushNamed(context, "/payment");
   }
 }
 

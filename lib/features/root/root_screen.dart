@@ -3,6 +3,7 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
 import 'package:mpit_hack/features/home/screens/home_screen.dart';
+import 'package:mpit_hack/features/news/screens/news_screen.dart';
 import 'package:mpit_hack/features/statement/screens/statement_list_screen.dart';
 import 'package:mpit_hack/features/statement/screens/statement_screen.dart';
 
@@ -17,7 +18,7 @@ class _RootScreenState extends State<RootScreen> {
   int _currentScreen = 1;
 
   final List<Widget> _screens = [
-    Container(),
+    NewsScreen(),
     const HomeScreen(),
     StatementListScreen(),
   ];
@@ -28,9 +29,9 @@ class _RootScreenState extends State<RootScreen> {
       body: _screens[_currentScreen],
       bottomNavigationBar: CurvedNavigationBar(
         index: _currentScreen,
-        backgroundColor: greyColor,
-        buttonBackgroundColor: Colors.grey.withOpacity(0.4),
-        color: Colors.grey.withOpacity(0.4),
+        backgroundColor: greyColor.withOpacity(0.3),
+        buttonBackgroundColor: backgroudAppColor,
+        color: backgroudAppColor,
         items: [
           CurvedNavigationBarItem(
             child: Image.asset("assets/root/news.png", width: 35),

@@ -47,15 +47,13 @@ class _StatementConfirmScreenState extends State<StatementConfirmScreen> {
                   SizedBox(height: 20),
                   Container(
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: greyColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
+                    decoration: appBoxDecoration,
                     padding: EdgeInsets.all(20),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Row(
+                          spacing: 2,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: List.generate(
                             6,
@@ -65,10 +63,7 @@ class _StatementConfirmScreenState extends State<StatementConfirmScreen> {
                                 alignment: Alignment.center,
                                 height: 70,
                                 width: 45,
-                                decoration: BoxDecoration(
-                                  color: whiteColor,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
+                                decoration: appBoxDecoration,
                                 child: Text(index.toString()),
                               ),
                             ),
@@ -76,16 +71,6 @@ class _StatementConfirmScreenState extends State<StatementConfirmScreen> {
                         ),
                         SizedBox(height: 40),
                         // First Additional Field
-                        Container(
-                          width: double.infinity,
-                          height: 80,
-                          decoration: BoxDecoration(
-                            color: whiteColor,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        // Second Additional Field
                         SizedBox(
                           height: 50,
                           width: double.infinity,

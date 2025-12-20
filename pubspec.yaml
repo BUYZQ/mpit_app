@@ -37,6 +37,7 @@ dependencies:
   supabase_flutter: ^2.12.0
   flutter_dotenv: ^6.0.0
   curved_labeled_navigation_bar: ^2.0.6
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +68,13 @@ flutter:
     - assets/payment/
     - assets/root/
     - assets/news/
+    - assets/app/
   #   - images/a_dot_ham.jpeg
+
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/app/logo.png"
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

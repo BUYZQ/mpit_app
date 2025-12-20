@@ -38,10 +38,7 @@ class StatementHistoryScreen extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(20),
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
+                        decoration: appBoxDecoration,
                         child: Column(
                           spacing: 15,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,10 +99,7 @@ class StatementHistoryScreen extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(20),
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
+                        decoration: appBoxDecoration,
                         child: Column(
                           spacing: 15,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,10 +135,7 @@ class StatementHistoryScreen extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(20),
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
+                        decoration: appBoxDecoration,
                         child: Column(
                           spacing: 15,
                           crossAxisAlignment: CrossAxisAlignment.start,

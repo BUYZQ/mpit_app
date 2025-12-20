@@ -76,7 +76,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: blackColor,
                       blurRadius: 0.2,
                       spreadRadius: 3,
-                      offset: Offset(1.4, 1.4)
+                      offset: Offset(1.4, 1.4),
                     ),
                     BoxShadow(
                       color: whiteColor,
@@ -121,17 +121,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: MyButton(
                           title: "Зарегистрироваться",
                           onPressed: navToOtp,
-                        )
+                        ),
                       ),
                       SizedBox(
                         height: 60,
                         width: double.infinity,
-                        child:  MyButton(
+                        child: MyButton(
                           bg: Color(0xffECF0F3),
                           fg: blackColor,
                           title: "Авторизироваться",
                           onPressed: navToLogin,
-                        )
+                        ),
                       ),
                       SizedBox(
                         height: 60,
@@ -141,7 +141,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fg: whiteColor,
                           title: "Продолжить с ВК ID",
                           onPressed: () {},
-                        )
+                        ),
                       ),
                     ],
                   ),
@@ -159,7 +159,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
     Navigator.pushNamed(context, "/login");
   }
 
-  navToOtp() {
-    Navigator.pushNamed(context, "/otp");
+  navToOtp() async {
+    if (surnameController.text.trim().isEmpty ||
+        nameController.text.trim().isEmpty ||
+        patronymicController.text.trim().isEmpty ||
+        phoneController.text.trim().isEmpty ||
+        passwordController.text.trim().isEmpty ||
+        confirmPasswordController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Заполните все поля"),
+          backgroundColor: Colors.red,
+        ),
+      );
+    } else if (passwordController.text.trim() !=
+        confirmPasswordController.text.trim()) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Пароли не совпадают"),
+          backgroundColor: Colors.red,
+        ),
+      );
+    } else {
+      Navigator.pushNamed(context, "/root");
+    }
   }
 }

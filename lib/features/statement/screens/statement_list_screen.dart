@@ -23,10 +23,7 @@ class _StatementListScreenState extends State<StatementListScreen> {
               SizedBox(height: 20),
               Container(
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  color: greyColor,
-                  borderRadius: BorderRadius.circular(30),
-                ),
+                decoration: appBoxDecoration,
                 padding: EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 30,
@@ -60,10 +57,7 @@ class _StatementListScreenState extends State<StatementListScreen> {
               SizedBox(height: 20),
               Container(
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  color: greyColor,
-                  borderRadius: BorderRadius.circular(30),
-                ),
+                decoration: appBoxDecoration,
                 padding: EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 30,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpit_hack/constants.dart';
 
 class ReseiptsStatScreen extends StatelessWidget {
   const ReseiptsStatScreen({super.key});
@@ -41,13 +42,7 @@ class UserCard extends StatelessWidget {
         right: 20,
         bottom: 40,
       ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(30),
-            bottomLeft: Radius.circular(30)
-        ),
-        color: Colors.grey,
-      ),
+      decoration: appBoxDecoration,
       child: Row(
         children: [
           const CircleAvatar(
@@ -95,7 +90,7 @@ class _ReceiptsCardState extends State<ReceiptsCard> {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
-      decoration: _cardDecoration(),
+      decoration: appBoxDecoration,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -143,7 +138,7 @@ class AverageRentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      decoration: _cardDecoration(),
+      decoration: appBoxDecoration,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

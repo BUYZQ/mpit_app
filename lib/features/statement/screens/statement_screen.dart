@@ -30,10 +30,7 @@ class _StatementScreenState extends State<StatementScreen> {
             Expanded(
               child: Container(
                 margin: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: greyColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                decoration: appBoxDecoration,
                 padding: EdgeInsets.all(20),
                 child: SingleChildScrollView(
                   child: Column(
@@ -47,10 +44,7 @@ class _StatementScreenState extends State<StatementScreen> {
                       Container(
                         width: double.infinity,
                         height: 200,
-                        decoration: BoxDecoration(
-                          color: whiteColor,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
+                        decoration:appBoxDecoration,
                       ),
                       SizedBox(height: 30),
                       // "Выполнить по" Section

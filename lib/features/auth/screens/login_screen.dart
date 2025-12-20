@@ -141,6 +141,16 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void navToMainScreen() {
-    Navigator.pushNamed(context, "/root");
+    if (phoneController.text.trim().isEmpty ||
+        passwordController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Неверный номер телефона или пароль"),
+          backgroundColor: Colors.red,
+        ),
+      );
+    } else {
+      Navigator.pushNamed(context, "/root");
+    }
   }
 }
