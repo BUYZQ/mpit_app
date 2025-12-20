@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
+import 'package:mpit_hack/features/widgets/my_button.dart';
 import 'package:mpit_hack/features/widgets/my_text_field.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -71,11 +72,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   borderRadius: BorderRadius.circular(40),
                   color: backgroudAppColor,
                   boxShadow: [
-                    BoxShadow(color: blackColor, blurRadius: 0.2),
+                    BoxShadow(
+                      color: blackColor,
+                      blurRadius: 0.2,
+                      spreadRadius: 3,
+                      offset: Offset(1.4, 1.4)
+                    ),
                     BoxShadow(
                       color: whiteColor,
                       blurRadius: 5,
-                      spreadRadius: 3,
+                      spreadRadius: 5,
                     ),
                   ],
                 ),
@@ -108,29 +114,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         hint: "Подтвердите пароль",
                         controller: confirmPasswordController,
                       ),
+                      SizedBox(height: 20),
                       SizedBox(
-                        height: 50,
+                        height: 60,
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child: MyButton(
+                          title: "Зарегистрироваться",
                           onPressed: navToOtp,
-                          child: Text("Зарегистрироваться"),
-                        ),
+                        )
                       ),
                       SizedBox(
-                        height: 50,
+                        height: 60,
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child:  MyButton(
+                          bg: whiteColor,
+                          fg: blackColor,
+                          title: "Авторизироваться",
                           onPressed: navToLogin,
-                          child: Text("Авторизация"),
-                        ),
+                        )
                       ),
                       SizedBox(
-                        height: 50,
+                        height: 60,
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child: MyButton(
+                          title: "Продолжить с ВК ID",
                           onPressed: () {},
-                          child: Text("Войти VK ID"),
-                        ),
+                        )
                       ),
                     ],
                   ),

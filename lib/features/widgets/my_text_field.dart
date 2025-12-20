@@ -22,11 +22,20 @@ class _MyTextFieldState extends State<MyTextField> {
     return Container(
       height: 60,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: whiteColor,
+        borderRadius: BorderRadius.circular(40),
+        color: backgroudAppColor,
         boxShadow: [
           BoxShadow(
-            color: greyColor,
+            color: blackColor,
+            blurRadius: 0.2,
+            spreadRadius: 2,
+              offset: Offset(-0.1, -0.1)
+          ),
+          BoxShadow(
+              color: whiteColor,
+              blurRadius: 5,
+              spreadRadius: 4,
+              offset: Offset(1, 1)
           ),
         ],
       ),
