@@ -10,13 +10,13 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-
   final TextEditingController surnameController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController patronymicController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,33 +32,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   Text(
                     "МойРайон",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
               Row(
-                spacing: 14,
+                spacing: 4,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    color: Colors.grey,
-                  ),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    color: Colors.grey,
-                  ),
-                  Container(
-                    height: 80,
-                    width: 80,
-                    color: Colors.grey,
-                  )
+                  Image.asset("assets/auth/home.png", width: 45),
+                  Image.asset("assets/auth/home.png", width: 65),
+                  Image.asset("assets/auth/home.png", width: 95),
                 ],
               ),
               SizedBox(height: 10),
@@ -67,10 +52,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   Text(
                     "Добро пожаловать",
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
@@ -79,9 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   Text(
                     "Давайте зарегестрируемся",
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
+                    style: TextStyle(fontSize: 25),
                   ),
                 ],
               ),
@@ -89,7 +69,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
-                  color: greyColor,
+                  color: backgroudAppColor,
+                  boxShadow: [
+                    BoxShadow(color: blackColor, blurRadius: 0.2),
+                    BoxShadow(
+                      color: whiteColor,
+                      blurRadius: 5,
+                      spreadRadius: 3,
+                    ),
+                  ],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -103,10 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         hint: "Фамилия",
                         controller: surnameController,
                       ),
-                      MyTextField(
-                        hint: "Имя",
-                        controller: nameController,
-                      ),
+                      MyTextField(hint: "Имя", controller: nameController),
                       MyTextField(
                         hint: "Отчество",
                         controller: patronymicController,
@@ -159,7 +144,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-
   void navToLogin() {
     Navigator.pushNamed(context, "/login");
   }
@@ -168,4 +152,3 @@ class _RegisterScreenState extends State<RegisterScreen> {
     Navigator.pushNamed(context, "/otp");
   }
 }
-

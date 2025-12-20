@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       theme: ThemeData(
-        scaffoldBackgroundColor: whiteColor,
+        scaffoldBackgroundColor: backgroudAppColor,
       ),
       routes: {
         "/register": (context) => RegisterScreen(),
