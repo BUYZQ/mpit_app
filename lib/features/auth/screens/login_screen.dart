@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
+import 'package:mpit_hack/features/widgets/my_button.dart';
 import 'package:mpit_hack/features/widgets/my_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -10,7 +11,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -28,33 +28,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Text(
                     "МойРайон",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
               Row(
-                spacing: 14,
+                spacing: 4,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    color: Colors.grey,
-                  ),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    color: Colors.grey,
-                  ),
-                  Container(
-                    height: 80,
-                    width: 80,
-                    color: Colors.grey,
-                  )
+                  Image.asset("assets/auth/home.png", width: 45),
+                  Image.asset("assets/auth/home.png", width: 65),
+                  Image.asset("assets/auth/home.png", width: 95),
                 ],
               ),
               SizedBox(height: 10),
@@ -63,10 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Text(
                     "Добро пожаловать",
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
@@ -75,9 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Text(
                     "Давайте авторизируемся",
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
+                    style: TextStyle(fontSize: 25),
                   ),
                 ],
               ),
@@ -85,7 +65,20 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
-                  color: greyColor,
+                  color: backgroudAppColor,
+                  boxShadow: [
+                    BoxShadow(
+                      color: blackColor,
+                      blurRadius: 0.2,
+                      spreadRadius: 3,
+                      offset: Offset(1.4, 1.4),
+                    ),
+                    BoxShadow(
+                      color: whiteColor,
+                      blurRadius: 5,
+                      spreadRadius: 5,
+                    ),
+                  ],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -106,25 +99,29 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 50,
                         width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text("Авторизироваться"),
+                        child: MyButton(
+                          onPressed: navToMainScreen,
+                          title: "Авторизироваться",
                         ),
                       ),
                       SizedBox(
                         height: 50,
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child: MyButton(
+                          bg: Color(0xffECF0F3),
                           onPressed: navToRegister,
-                          child: Text("Регистрация"),
+                          title: "Зарегистрироваться",
+                          fg: blackColor,
                         ),
                       ),
                       SizedBox(
                         height: 50,
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child: MyButton(
+                          bg: blueColor,
+                          fg: whiteColor,
                           onPressed: () {},
-                          child: Text("Войти VK ID"),
+                          title: "Продолжить с ВК ID",
                         ),
                       ),
                     ],
@@ -142,5 +139,8 @@ class _LoginScreenState extends State<LoginScreen> {
   void navToRegister() {
     Navigator.pushNamed(context, "/register");
   }
-}
 
+  void navToMainScreen() {
+    Navigator.pushNamed(context, "/root");
+  }
+}

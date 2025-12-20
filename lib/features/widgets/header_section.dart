@@ -15,13 +15,7 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: greyColor,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20),
-          bottomRight: Radius.circular(20),
-        ),
-      ),
+      decoration: appBoxDecoration,
       padding: EdgeInsets.only(
         top: 40,
         left: 20,

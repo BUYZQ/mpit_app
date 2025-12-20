@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
 import 'package:mpit_hack/features/auth/widgets/code_text_field.dart';
+import 'package:mpit_hack/features/widgets/my_button.dart';
 
 class OtpGosuslugiScreen extends StatefulWidget {
   const OtpGosuslugiScreen({super.key});
@@ -36,25 +37,13 @@ class _OtpGosuslsugiScreenState extends State<OtpGosuslugiScreen> {
                 ],
               ),
               Row(
-                spacing: 14,
+                spacing: 4,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    color: Colors.grey,
-                  ),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    color: Colors.grey,
-                  ),
-                  Container(
-                    height: 80,
-                    width: 80,
-                    color: Colors.grey,
-                  )
+                  Image.asset("assets/auth/home.png", width: 45),
+                  Image.asset("assets/auth/home.png", width: 65),
+                  Image.asset("assets/auth/home.png", width: 95),
                 ],
               ),
               SizedBox(height: 10),
@@ -85,7 +74,20 @@ class _OtpGosuslsugiScreenState extends State<OtpGosuslugiScreen> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
-                  color: greyColor,
+                  color: backgroudAppColor,
+                  boxShadow: [
+                    BoxShadow(
+                        color: blackColor,
+                        blurRadius: 0.2,
+                        spreadRadius: 3,
+                        offset: Offset(1.4, 1.4)
+                    ),
+                    BoxShadow(
+                      color: whiteColor,
+                      blurRadius: 5,
+                      spreadRadius: 5,
+                    ),
+                  ],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -98,8 +100,21 @@ class _OtpGosuslsugiScreenState extends State<OtpGosuslugiScreen> {
                       Container(
                         padding: EdgeInsets.all(15),
                         decoration: BoxDecoration(
-                          color: Colors.white,
                           borderRadius: BorderRadius.circular(40),
+                          color: backgroudAppColor,
+                          boxShadow: [
+                            BoxShadow(
+                              color: blackColor,
+                              blurRadius: 0.2,
+                              spreadRadius: 3,
+                              offset: Offset(1.4, 1.4),
+                            ),
+                            BoxShadow(
+                              color: whiteColor,
+                              blurRadius: 5,
+                              spreadRadius: 5,
+                            ),
+                          ],
                         ),
                         child: Image.asset("assets/auth/gosuslugi.png"),
                       ),
@@ -107,9 +122,9 @@ class _OtpGosuslsugiScreenState extends State<OtpGosuslugiScreen> {
                       SizedBox(
                         height: 50,
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child: MyButton(
                           onPressed: navToHomeScreen,
-                          child: Text("Авторизироваться"),
+                          title: "Подтвердить",
                         ),
                       ),
                     ],

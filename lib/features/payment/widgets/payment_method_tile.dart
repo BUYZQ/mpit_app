@@ -22,19 +22,27 @@ class PaymentMethodTile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         height: 70,
         decoration: BoxDecoration(
-          color: isSelected ? Colors.black : whiteColor,
-          borderRadius: BorderRadius.circular(15),
-          border: Border.all(
-            color: isSelected ? Colors.black : Colors.grey.shade300,
-            width: 1.5,
-          ),
+          borderRadius: BorderRadius.circular(40),
+          color: isSelected ? blackColor : backgroudAppColor,
+          boxShadow: [
+            BoxShadow(
+              color: blackColor,
+              blurRadius: 0.2,
+              spreadRadius: 3,
+              offset: Offset(1.4, 1.4),
+            ),
+            BoxShadow(
+              color: whiteColor,
+              blurRadius: 5,
+              spreadRadius: 5,
+            ),
+          ],
         ),
         child: Row(
           children: [
-            Icon(
+            Image.asset(
               method.icon,
-              color: isSelected ? Colors.white : Colors.black,
-              size: 28,
+              width: 28,
             ),
             const SizedBox(width: 15),
             Expanded(
@@ -48,14 +56,6 @@ class PaymentMethodTile extends StatelessWidget {
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: isSelected ? Colors.white : Colors.black,
-                    ),
-                  ),
-                  Text(
-                    method.subtitle,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color:
-                      isSelected ? Colors.white70 : Colors.grey.shade600,
                     ),
                   ),
                 ],

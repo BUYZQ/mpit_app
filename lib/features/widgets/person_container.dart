@@ -19,13 +19,7 @@ class PersonContainer extends StatelessWidget {
           right: 20,
           bottom: 40,
         ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(30),
-              bottomLeft: Radius.circular(30)
-          ),
-          color: Colors.grey,
-        ),
+        decoration: appBoxDecoration,
         child: Row(
           spacing: 10,
           children: [

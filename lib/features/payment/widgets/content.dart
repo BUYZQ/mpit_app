@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
-import 'package:mpit_hack/features/payment/screens/payment_screen.dart';
 import 'package:mpit_hack/features/payment/widgets/bank.dart';
 import 'package:mpit_hack/features/payment/widgets/bank_tile.dart';
 
@@ -39,12 +38,6 @@ class _ContentState extends State<Content> {
               )
                   .toList(),
             ),
-          ),
-          PayButton(
-            enabled: selectedBank != null,
-            onPressed: () {
-              debugPrint('Выбран банк: $selectedBank');
-            },
           ),
         ],
       ),

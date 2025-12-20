@@ -127,7 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         height: 60,
                         width: double.infinity,
                         child:  MyButton(
-                          bg: whiteColor,
+                          bg: Color(0xffECF0F3),
                           fg: blackColor,
                           title: "Авторизироваться",
                           onPressed: navToLogin,
@@ -137,6 +137,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         height: 60,
                         width: double.infinity,
                         child: MyButton(
+                          bg: blueColor,
+                          fg: whiteColor,
                           title: "Продолжить с ВК ID",
                           onPressed: () {},
                         )

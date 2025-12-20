@@ -17,7 +17,7 @@ class TitleSection extends StatelessWidget {
         ),
         SizedBox(height: 10),
         Text(
-          "Выберите удобный способ оплаты",
+          "Выберете способ, которым\nхотите оплатить",
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.w300,

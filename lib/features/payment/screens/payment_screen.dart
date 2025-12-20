@@ -105,35 +105,25 @@ class PayButton extends StatelessWidget {
 
 class PaymentMethod {
   final String title;
-  final String subtitle;
-  final IconData icon;
+  final String icon;
 
   const PaymentMethod({
     required this.title,
-    required this.subtitle,
     required this.icon,
   });
 }
 
 const List<PaymentMethod> paymentMethods = [
   PaymentMethod(
-    title: 'Банковская карта',
-    subtitle: 'Visa, Mastercard, МИР',
-    icon: Icons.credit_card,
-  ),
-  PaymentMethod(
     title: 'СБП',
-    subtitle: 'Оплата по QR-коду',
-    icon: Icons.qr_code,
+    icon: "assets/payment/spb_icon.png"
   ),
   PaymentMethod(
-    title: 'Интернет-банк',
-    subtitle: 'Оплата через приложение банка',
-    icon: Icons.account_balance,
+    title: 'SberPay',
+    icon: "assets/payment/sberpay.png"
   ),
   PaymentMethod(
-    title: 'Наличные',
-    subtitle: 'Оплата при получении',
-    icon: Icons.payments,
+    title: 'Добавить карту',
+    icon: "assets/payment/cards.png"
   ),
 ];

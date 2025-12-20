@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
 import 'package:mpit_hack/features/payment/screens/payment_screen.dart';
 import 'package:mpit_hack/features/payment/widgets/payment_method_tile.dart';
+import 'package:mpit_hack/features/widgets/my_button.dart';
 
 class PaymentMethodsCard extends StatelessWidget {
   final String? selectedMethod;
@@ -34,16 +35,16 @@ class PaymentMethodsCard extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           const Text(
-            "Кварплата: 2500 ₽",
+            "Кварплата: 2500 рублей",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 23,
               fontWeight: FontWeight.w500,
             ),
           ),
           const SizedBox(height: 20),
-          PayButton(
-            enabled: selectedMethod != null,
+          MyButton(
             onPressed: onPayPressed,
+            title: "Оплатить",
           ),
         ],
       ),

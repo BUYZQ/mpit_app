@@ -29,19 +29,19 @@ class _RootScreenState extends State<RootScreen> {
       bottomNavigationBar: CurvedNavigationBar(
         index: _currentScreen,
         backgroundColor: greyColor,
-        buttonBackgroundColor: Colors.grey,
-        color: Colors.grey,
+        buttonBackgroundColor: Colors.grey.withOpacity(0.4),
+        color: Colors.grey.withOpacity(0.4),
         items: [
           CurvedNavigationBarItem(
-            child: Icon(Icons.search),
+            child: Image.asset("assets/root/news.png", width: 35),
             label: '',
           ),
           CurvedNavigationBarItem(
-            child: Icon(Icons.home_outlined),
+            child: Image.asset("assets/root/home.png", width: 30),
             label: '',
           ),
           CurvedNavigationBarItem(
-            child: Icon(Icons.document_scanner),
+            child: Image.asset("assets/root/docs.png", width: 30),
             label: '',
           ),
         ],

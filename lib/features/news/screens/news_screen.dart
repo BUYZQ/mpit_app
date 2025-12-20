@@ -3,14 +3,14 @@ import 'package:mpit_hack/constants.dart';
 import 'package:mpit_hack/features/widgets/my_button.dart';
 import 'package:mpit_hack/features/widgets/person_container.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class NewsScreen extends StatefulWidget {
+  const NewsScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<NewsScreen> createState() => _NewsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _NewsScreenState extends State<NewsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,15 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                       SizedBox(height: 10),
-                       SizedBox(
-                         height: 50,
-                         width: double.infinity,
-                         child: MyButton(
-                           onPressed: navToPaymentScreen,
-                           title: "Оплатить",
-                         ),
-                       ),
+                        SizedBox(height: 10),
+                        SizedBox(
+                          height: 50,
+                          width: double.infinity,
+                          child: MyButton(
+                            onPressed: navToPaymentScreen,
+                            title: "Оплатить",
+                          ),
+                        ),
                       ],
                     ),
                   );

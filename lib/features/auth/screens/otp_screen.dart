@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpit_hack/constants.dart';
 import 'package:mpit_hack/features/auth/widgets/code_text_field.dart';
+import 'package:mpit_hack/features/widgets/my_button.dart';
 import 'package:mpit_hack/features/widgets/my_text_field.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -37,25 +38,13 @@ class _OtpScreenState extends State<OtpScreen> {
                 ],
               ),
               Row(
-                spacing: 14,
+                spacing: 4,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    color: Colors.grey,
-                  ),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    color: Colors.grey,
-                  ),
-                  Container(
-                    height: 80,
-                    width: 80,
-                    color: Colors.grey,
-                  )
+                  Image.asset("assets/auth/home.png", width: 45),
+                  Image.asset("assets/auth/home.png", width: 65),
+                  Image.asset("assets/auth/home.png", width: 95),
                 ],
               ),
               SizedBox(height: 10),
@@ -86,7 +75,20 @@ class _OtpScreenState extends State<OtpScreen> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
-                  color: greyColor,
+                  color: backgroudAppColor,
+                  boxShadow: [
+                    BoxShadow(
+                      color: blackColor,
+                      blurRadius: 0.2,
+                      spreadRadius: 3,
+                      offset: Offset(1.4, 1.4),
+                    ),
+                    BoxShadow(
+                      color: whiteColor,
+                      blurRadius: 5,
+                      spreadRadius: 5,
+                    ),
+                  ],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -119,20 +121,23 @@ class _OtpScreenState extends State<OtpScreen> {
                           ),
                         ],
                       ),
+                      SizedBox(height: 20),
                       SizedBox(
                         height: 50,
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child: MyButton(
                           onPressed: navToOtpGosuslugi,
-                          child: Text("Продолжить"),
+                          title: "Подтвердить"
                         ),
                       ),
                       SizedBox(
                         height: 50,
                         width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: navToRegister,
-                          child: Text("Регистрация"),
+                        child: MyButton(
+                          bg: whiteColor,
+                          fg: blackColor,
+                          onPressed: () {},
+                          title: "Отпрвить код заново",
                         ),
                       ),
                     ],
